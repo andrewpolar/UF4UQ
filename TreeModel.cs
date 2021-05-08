@@ -105,10 +105,9 @@ namespace UQ
             int cnt = 0;
             for (int i = 0; i < _dh._target.Count; ++i)
             {
-                if (_dh._id[i] != _id) continue;
-                double[] inputs = _dh._inputs[i];
+               if (_dh._id[i] != _id) continue;
                 double z = _dh._target[i];
-                double model = Root.GetResult(inputs);
+                double model = Root.GetResult(_dh._inputs[i]);
                 x.Add(model);
                 y.Add(z);
                 error += (z - model) * (z - model);
